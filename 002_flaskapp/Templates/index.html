@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Customer Churn Insight Engine</title>
+    <!-- Include the SHAP JavaScript library -->
+    <script src="https://cdn.jsdelivr.net/npm/@shap/force-plot@0.3.0/dist/force-plot.min.js"></script>
+</head>
+<body>
+  
+  <h2>Customer Churn Insight Engine</h2>
+  
+  <form method="POST" action="/">
+    gender:<br>
+    <select name="gender" required>
+        <option value="Female">Female</option>
+        <option value="Male">Male</option>
+    </select>
+    <br><br>
+
+    SeniorCitizen:<br>
+    <select name="SeniorCitizen" required>
+        <option value=1>Yes</option>
+        <option value=0>No</option>
+    </select>
+    <br><br>
+
+    Partner:<br>
+    <select name="Partner" required>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+    </select>
+    <br><br>
+
+    Dependents:<br>
+    <select name="Dependents" required>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+    </select>
+    <br><br>
+
+    tenure:<br>
+    <input type="number" name="tenure" value=10>
+    <br><br>
+
+    PhoneService:<br>
+    <select name="PhoneService" required>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+    </select>
+    <br><br>
+
+    MultipleLines:<br>
+    <select name="MultipleLines" required>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+        <option value="No phone service">No phone service</option>
+    </select>
+    <br><br>
+
+    InternetService:<br>
+    <select name="InternetService" required>
+        <option value="DSL">DSL</option>
+        <option value="Fiber optic">Fiber optic</option>
+        <option value="No">No</option>
+    </select>
+    <br><br>
+
+    OnlineSecurity:<br>
+    <select name="OnlineSecurity" required>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+        <option value="No internet service">No internet service</option>
+    </select>
+    <br><br>
+
+    OnlineBackup:<br>
+    <select name="OnlineBackup" required>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+        <option value="No internet service">No internet service</option>
+    </select>
+    <br><br>
+
+    DeviceProtection:<br>
+    <select name="DeviceProtection" required>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+        <option value="No internet service">No internet service</option>
+    </select>
+    <br><br>
+
+    TechSupport:<br>
+    <select name="TechSupport" required>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+        <option value="No internet service">No internet service</option>
+    </select>
+    <br><br>
+
+    StreamingTV:<br>
+    <select name="StreamingTV" required>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+        <option value="No internet service">No internet service</option>
+    </select>
+    <br><br>
+
+    StreamingMovies:<br>
+    <select name="StreamingMovies" required>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+        <option value="No internet service">No internet service</option>
+    </select>
+    <br><br>
+
+    Contract:<br>
+    <select name="Contract" required>
+        <option value="Month-to-month">Month-to-month</option>
+        <option value="One year">One year</option>
+        <option value="Two year">Two year</option>
+    </select>
+    <br><br>
+
+    PaperlessBilling:<br>
+    <select name="PaperlessBilling" required>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+    </select>
+    <br><br>
+
+    PaymentMethod:<br>
+    <select name="PaymentMethod" required>
+        <option value="Electronic check">Electronic check</option>
+        <option value="Mailed check">Mailed check</option>
+        <option value="Credit card (automatic)">Credit card (automatic)</option>
+        <option value="Bank transfer (automatic)">Bank transfer (automatic)</option>
+    </select>
+    <br><br>
+
+    MonthlyCharges:<br>
+    <input type="number" name="MonthlyCharges" value=50>
+    <br><br>
+
+    TotalCharges:<br>
+    <input type="number" name="TotalCharges" value=50>
+    <br><br>
+
+    <input type="submit" value="Submit">
+  </form>
+
+  {% if pred %}
+  <p>The probability in churn is {{ pred }}</p>
+  {% endif %}
+
+
+
+
+</body>
+</html>
